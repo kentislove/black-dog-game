@@ -1,0 +1,208 @@
+/* 基本樣式設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    background-color: #000;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* 遊戲畫布 */
+#gameCanvas {
+    display: block;
+    background-color: #87CEEB;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 觸控控制按鈕 */
+.touch-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 100;
+}
+
+.control-btn {
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid #333;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.left-btn, .right-btn {
+    font-size: 36px;
+}
+
+.jump-btn, .bark-btn {
+    font-size: 18px;
+}
+
+.pause-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+}
+
+/* 行動裝置適配 */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .control-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .left-btn, .right-btn {
+        font-size: 30px;
+    }
+    
+    .jump-btn, .bark-btn {
+        font-size: 16px;
+    }
+}
+
+/* 遊戲說明 */
+.game-instructions {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    width: 100%;
+    padding: 0 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* 桌面版控制說明 */
+.desktop-controls {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .desktop-controls {
+        display: block;
+    }
+    
+    .touch-controls {
+        display: none;
+    }
+}
+
+/* 確保畫布滿版 */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 遊戲載入畫面 */
+.loading-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    color: white;
+}
+
+.loading-bar {
+    width: 80%;
+    height: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.loading-progress {
+    height: 100%;
+    background-color: #4CAF50;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* 遊戲UI元素 */
+.game-ui {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.score-display, .health-display, .powerups-display {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.powerup-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}

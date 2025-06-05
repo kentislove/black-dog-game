@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>黑色米克斯狗狗闖關遊戲</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- 遊戲載入畫面 -->
+        <div class="loading-screen">
+            <h1>黑色米克斯狗狗闖關遊戲</h1>
+            <p>載入中，請稍候...</p>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+        
+        <!-- 桌面版控制說明 -->
+        <div class="game-instructions desktop-controls">
+            桌面版控制：方向鍵移動，空格跳躍，Z鍵吼叫，ESC暫停
+        </div>
+    </div>
+    
+    <script src="/static/js/game.js"></script>
+</body>
+</html>
